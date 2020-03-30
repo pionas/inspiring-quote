@@ -4,9 +4,9 @@ import {
     HttpLink,
     InMemoryCache,
     useQuery,
-    gql
+    gql,
+    ApolloProvider
 } from "@apollo/client";
-import "../styles.css";
 
 const URL = "https://infinite-lowlands-59039.herokuapp.com/";
 
@@ -19,10 +19,12 @@ const client = new ApolloClient({
 
 export default function RandomDiceThrow() {
     return (
-        <div className="RandomDiceThrow">
-            <h1>Random Dice Throw</h1>
-            <RandomDiceThrowFetch client={client} />
-        </div>
+        <ApolloProvider client={client}>
+            <div className="RandomDiceThrow">
+                <h1>Random Dice Throw</h1>
+                <RandomDiceThrowFetch />
+            </div>
+        </ApolloProvider>
     );
 }
 

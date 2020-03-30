@@ -25,8 +25,8 @@ ReactDOM.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
       <App />
-      <RandomDiceThrow />
     </ApolloProvider>
+    <RandomDiceThrow />
   </React.StrictMode>,
   rootElement
 );
